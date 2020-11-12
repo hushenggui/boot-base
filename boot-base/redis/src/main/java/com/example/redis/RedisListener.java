@@ -1,4 +1,4 @@
-package com.example.demo1110;
+package com.example.redis;
 
 /**
  * @program: microservice-framework

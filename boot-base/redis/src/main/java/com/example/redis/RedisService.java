@@ -1,4 +1,4 @@
-package com.example.demo1110;
+package com.example.redis;
 
 import org.springframework.stereotype.Service;
 

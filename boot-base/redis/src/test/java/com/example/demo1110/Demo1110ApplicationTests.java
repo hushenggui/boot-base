@@ -1,10 +1,10 @@
 package com.example.demo1110;
 
+import com.example.redis.Demo1110Application;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.redis.core.StringRedisTemplate;
-import org.springframework.test.context.junit4.SpringRunner;
 
 import java.time.Duration;
 
