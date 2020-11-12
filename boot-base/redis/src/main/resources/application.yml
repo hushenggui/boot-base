@@ -1,0 +1,14 @@
+server:
+  port: 85
+
+spring:
+  application:
+    name: boot-base
+
+  redis:
+    host: 192.168.1.92
+    port: 6379
+    password: admin
+    database: 0
+
+
