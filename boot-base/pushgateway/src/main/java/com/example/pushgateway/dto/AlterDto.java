@@ -5,10 +5,13 @@ import com.example.pushgateway.enums.AlertName;
 import com.example.pushgateway.enums.AlertType;
 import com.example.pushgateway.enums.ApplicationType;
 import com.fasterxml.jackson.annotation.JsonFormat;
+import java.util.Collections;
+import java.util.Optional;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.util.CollectionUtils;
 import org.springframework.util.ObjectUtils;
 
 import java.net.InetAddress;
@@ -119,5 +122,16 @@ public class AlterDto implements java.io.Serializable {
     }
     job = job;
     return job;
+  }
+
+
+  public static void main(String[] args) {
+    AlterDto alterDto = new AlterDto();
+    Optional.ofNullable(alterDto).map(alterDto::getJob).orElse(new AlterDto());
+
+  }
+
+  private AlterDto getJob(AlterDto alterDto) {
+    return alterDto;
   }
 }

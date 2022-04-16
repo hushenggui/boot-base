@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: example-discovery-prd
+  profiles:
+    active: test
+  cloud:
+    nacos:
+      discovery:
+        namespace: 0182702e-e14e-4b4c-b3a9-891844f2bbdd
+        server-addr: 192.168.0.199:8848
+      config:
+        namespace: 0182702e-e14e-4b4c-b3a9-891844f2bbdd
+        server-addr: 192.168.0.199:8848
+        group: DEFAULT_GROUP
+        file-extension: yaml
+        shared-configs:
+        refresh-enabled: true
+
+
+server:
+  port: 83

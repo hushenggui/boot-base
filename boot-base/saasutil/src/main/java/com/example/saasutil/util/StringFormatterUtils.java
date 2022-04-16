@@ -7,6 +7,7 @@ import java.io.UnsupportedEncodingException;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -130,7 +131,7 @@ public class StringFormatterUtils {
             if(jsonObject.get(key).isJsonNull()) {
                 value = "";
             } else {
-                value = jsonObject.get(key).getAsString();
+                value = jsonObject.get(key).getAsString().trim();
             }
             content.append((i == 0 ? "" : connectSymlinks) + key + assignment + value);
         }
@@ -153,7 +154,7 @@ public class StringFormatterUtils {
         StringBuffer content = new StringBuffer();
         // 按照key做首字母升序排列
         List<String> keys = new ArrayList<>(map.keySet());
-        Collections.sort(keys, String.CASE_INSENSITIVE_ORDER);
+        Collections.sort(keys, new CaseInsensitiveComparator());
         boolean flag = false;
         for (int i = 0; i < keys.size(); i++) {
             String key = keys.get(i);
@@ -184,6 +185,27 @@ public class StringFormatterUtils {
             signSrc = signSrc.replaceFirst(connectSymlinks, "");
         }
         return signSrc;
+    }
+
+    private static class CaseInsensitiveComparator
+        implements Comparator<String>, java.io.Serializable {
+        // use serialVersionUID from JDK 1.2.2 for interoperability
+        private static final long serialVersionUID = 8575799808933029326L;
+        public int compare(String s1, String s2) {
+            int n1 = s1.length();
+            int n2 = s2.length();
+            int min = Math.min(n1, n2);
+            for (int i = 0; i < min; i++) {
+                char c1 = s1.charAt(i);
+                char c2 = s2.charAt(i);
+                if (c1 != c2) {
+                    if (c1 != c2) {
+                        return c1 - c2;
+                    }
+                }
+            }
+            return n1 - n2;
+        }
     }
 
     public static Map<String, Object> object2Map(Object obj) {
@@ -238,6 +260,7 @@ public class StringFormatterUtils {
             if (!StringUtils.hasText(value)) {
                 continue;
             }
+            value = value.trim();
             content.append((i == 0 ? "" : connectSymlinks) + key + assignment + value);
         }
         String signSrc = content.toString();
@@ -246,6 +269,9 @@ public class StringFormatterUtils {
         }
         return signSrc;
     }
+
+
+
 
     /**
      * 按照Json数据排列

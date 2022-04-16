@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: example-nacos01
+  profiles:
+    active: test
+  cloud:
+    nacos:
+      config:
+        namespace: 0182702e-e14e-4b4c-b3a9-891844f2bbdd
+        server-addr: 192.168.0.199:8848
+        group: DEFAULT_GROUP
+        file-extension: yaml
+        shared-configs:
+        refresh-enabled: true
+
+
+server:
+  port: 85

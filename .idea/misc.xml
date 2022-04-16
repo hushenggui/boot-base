@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/juc/juc-demo" />
+  </component>
+  <component name="JavaScriptSettings">
+    <option name="languageLevel" value="ES6" />
+  </component>
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/boot-base/redis/pom.xml" />
+        <option value="$PROJECT_DIR$/boot-base/springaop/pom.xml" />
+        <option value="$PROJECT_DIR$/boot-base/saasutil/pom.xml" />
+        <option value="$PROJECT_DIR$/boot-base/jpa/pom.xml" />
+        <option value="$PROJECT_DIR$/boot-base/pushgateway/pom.xml" />
+        <option value="$PROJECT_DIR$/boot-base/nongshang/pom.xml" />
+        <option value="$PROJECT_DIR$/boot-base/kafka-basic/pom.xml" />
+        <option value="$PROJECT_DIR$/boot-base/rabbitmq/pom.xml" />
+        <option value="$PROJECT_DIR$/boot-base/paas-client/pom.xml" />
+        <option value="$PROJECT_DIR$/boot-base/excel-util/pom.xml" />
+        <option value="$PROJECT_DIR$/boot-base/xxl-job/pom.xml" />
+        <option value="$PROJECT_DIR$/boot-base/nacos-conifg/pom.xml" />
+        <option value="$PROJECT_DIR$/boot-base/nacos-discovery/pom.xml" />
+        <option value="$PROJECT_DIR$/boot-base/nacos-discovery-01/pom.xml" />
+        <option value="$PROJECT_DIR$/boot-base/rabbitmq-serial/pom.xml" />
+        <option value="$PROJECT_DIR$/boot-base/zk-exclusive-lock/pom.xml" />
+        <option value="$PROJECT_DIR$/boot-base/StringTable/pom.xml" />
+        <option value="$PROJECT_DIR$/jvm-base/StringTable/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="1.8" project-jdk-type="JavaSDK" />
+</project>

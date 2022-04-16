@@ -1,0 +1,14 @@
+spring:
+  rabbitmq:
+    host: 192.168.0.199
+    port: 5679
+    username: guest
+    password: guest
+    #通过实现 ConfirmCallback 接口，消息发送到 Broker 后触发回调，确认消息是否到达 Broker 服务器，也就是只确认是否正确到达 Exchange 中
+    publisher-confirms: true
+    #启动消息失败返回，比如路由不到队列时触发回调
+    publisher-returns: true
+    listener:
+      simple:
+        #确认模式
+        acknowledge-mode: auto

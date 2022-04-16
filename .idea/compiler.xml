@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Gradle Imported" enabled="true">
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.22/9c08ea24c6eb714e2d6170e8122c069a0ba9aacf/lombok-1.18.22.jar" />
+        </processorPath>
+        <module name="juc-demo.main" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="nacos_config" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="StringTable" options="-parameters" />
+      <module name="excel-util" options="-parameters" />
+      <module name="jpa" options="-parameters" />
+      <module name="juc" options="-parameters" />
+      <module name="kafka-basic" options="-parameters" />
+      <module name="nacos-conifg" options="-parameters" />
+      <module name="nacos-discovery" options="-parameters" />
+      <module name="nacos-discovery-01" options="-parameters" />
+      <module name="nacos_config" options="-parameters" />
+      <module name="nongshang" options="-parameters" />
+      <module name="paas-client" options="-parameters" />
+      <module name="pushgateway" options="-parameters" />
+      <module name="rabbitmq" options="-parameters" />
+      <module name="rabbitmq-serial" options="-parameters" />
+      <module name="redis" options="-parameters" />
+      <module name="saasutil" options="-parameters" />
+      <module name="springaop" options="-parameters" />
+      <module name="xxl-job" options="-parameters" />
+      <module name="zk-exclusive-lock" options="-parameters" />
+    </option>
+  </component>
+</project>

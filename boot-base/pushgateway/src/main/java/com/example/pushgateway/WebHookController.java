@@ -1,6 +1,7 @@
 package com.example.pushgateway;
 
 import com.example.pushgateway.utils.JacksonUtils;
+import javax.servlet.http.HttpServletRequest;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -37,6 +38,12 @@ public class WebHookController {
         Map<String, Object>  commonLabels = (Map<String, Object> )dataMap.get("commonLabels");
         System.out.println("commonLabels ------");
         System.out.println(commonLabels);
+        return "success";
+    }
+
+    @RequestMapping(value = "/testNS", produces = "application/text;charset=UTF-8")
+    public String receiver3(@RequestBody String json, HttpServletRequest request){
+        System.out.println(json);
         return "success";
     }
 

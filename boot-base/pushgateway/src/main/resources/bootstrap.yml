@@ -6,4 +6,4 @@ prometheus:
 server:
   tomcat:
     uri-encoding: UTF-8
-  port: 7088
+  port: 9088
