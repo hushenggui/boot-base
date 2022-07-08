@@ -58,4 +58,6 @@ public class SM4Util {
         kg.init(keySize, new SecureRandom());
         return kg.generateKey().getEncoded();
     }
+
+
 }

@@ -3,6 +3,9 @@ package com.example.juc.jucdemo.pool;
 import java.util.ArrayDeque;
 import java.util.Deque;
 import java.util.HashSet;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.ReentrantLock;
@@ -40,13 +43,13 @@ public class TestPool {
 
 @FunctionalInterface // 拒绝策略
 interface RejectPolicy<T> {
-    void reject(BlockingQueue<T> queue, T task);
+    void reject(BlockingQueueLocal<T> queue, T task);
 }
 
 @Slf4j(topic = "c.ThreadPool")
 class ThreadPool {
     // 任务队列
-    private BlockingQueue<Runnable> taskQueue;
+    private BlockingQueueLocal<Runnable> taskQueue;
 
     // 线程集合
     private HashSet<Worker> workers = new HashSet<>();
@@ -87,7 +90,7 @@ class ThreadPool {
         this.coreSize = coreSize;
         this.timeout = timeout;
         this.timeUnit = timeUnit;
-        this.taskQueue = new BlockingQueue<>(queueCapcity);
+        this.taskQueue = new BlockingQueueLocal<>(queueCapcity);
         this.rejectPolicy = rejectPolicy;
     }
 
@@ -122,7 +125,7 @@ class ThreadPool {
     }
 }
 @Slf4j(topic = "c.BlockingQueue")
-class BlockingQueue<T> {
+class BlockingQueueLocal<T> {
     // 1. 任务队列
     private Deque<T> queue = new ArrayDeque<>();
 
@@ -138,7 +141,7 @@ class BlockingQueue<T> {
     // 5. 容量
     private int capcity;
 
-    public BlockingQueue(int capcity) {
+    public BlockingQueueLocal(int capcity) {
         this.capcity = capcity;
     }
 

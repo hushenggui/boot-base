@@ -16,7 +16,7 @@ import org.springframework.util.StringUtils;
 @Slf4j
 public class RSAUtil_SaaS {
     /**
-     * 加密
+     * 私钥 - 加密
      * @param orgData
      * @param privateKey
      * @return
@@ -24,6 +24,17 @@ public class RSAUtil_SaaS {
     public static String encrypt(String orgData, String privateKey) {
         RSA rsa = SecureUtil.rsa(privateKey, null);
         return new String(Base64Util.encode(rsa.encrypt(orgData, KeyType.PrivateKey)));
+    }
+
+    /**
+     * 加密
+     * @param orgData
+     * @param privateKey
+     * @return
+     */
+    public static String encryptPublic(String orgData, String publicKey) {
+        RSA rsa = SecureUtil.rsa(null, publicKey);
+        return new String(Base64Util.encode(rsa.encrypt(orgData, KeyType.PublicKey)));
     }
 
     /**
