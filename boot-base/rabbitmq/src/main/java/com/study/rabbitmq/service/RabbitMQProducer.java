@@ -1,6 +1,7 @@
 package com.study.rabbitmq.service;
 
 import com.study.rabbitmq.model.SysUser;
+import com.study.rabbitmq.util.UUIDGenUtil;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -19,19 +20,31 @@ public class RabbitMQProducer {
 
     //普通工作模式
     public void sendMsgWork(){
+       /* for (int i = 0; i < 10; i++) {
+            SysUser sysUser = new SysUser();
+            sysUser.setName("zhangsan");
+            sysUser.setRoutingKey("work-direct");
+            sysUser.setId(String.valueOf(i));
+            rabbitTemplate.convertAndSend(RabbitListenerDirect.exchangeName, "work-direct", sysUser);
+        }*/
         SysUser sysUser = new SysUser();
         sysUser.setName("zhangsan");
         sysUser.setRoutingKey("work-direct");
+        sysUser.setId(UUIDGenUtil.createUUID());
         rabbitTemplate.convertAndSend(RabbitListenerDirect.exchangeName, "work-direct", sysUser);
+
     }
 
     //延迟模式 -- 死信队列
     public void sendMsgDelay(){
-        SysUser sysUser = new SysUser();
-        sysUser.setName("zhangsan");
-        sysUser.setRoutingKey("queueDelay_delay");
         //延迟队列
-        rabbitTemplate.convertAndSend(RabbitListenerDelay.exchangeName, "queueDelay_delay", sysUser);
+        for (int i = 0; i < 10; i++) {
+            SysUser sysUser = new SysUser();
+            sysUser.setName("zhangsan");
+            sysUser.setRoutingKey("work-direct");
+            sysUser.setId(String.valueOf(i));
+            rabbitTemplate.convertAndSend(RabbitListenerDelay.exchangeName, "queueDelay_delay", sysUser);
+        }
     }
 
     //负载模式

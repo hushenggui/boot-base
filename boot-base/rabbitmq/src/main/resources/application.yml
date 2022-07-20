@@ -6,6 +6,3 @@ spring:
     password: guest
     publisher-confirms: true
     publisher-returns: true
-    listener:
-      simple:
-        acknowledge-mode: auto

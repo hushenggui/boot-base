@@ -33,6 +33,9 @@ public class RabbitListenerDelay {
         System.out.println();
         System.out.println("RabbitListener delay1 -- >  ");
         System.out.println(sysUser);
+        if(sysUser.getId().equals("6")) {
+            throw new RuntimeException();
+        }
     }
 
 

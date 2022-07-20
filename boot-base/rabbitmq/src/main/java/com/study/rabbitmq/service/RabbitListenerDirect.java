@@ -26,6 +26,8 @@ public class RabbitListenerDirect {
             exchange = @Exchange(value = exchangeName, ignoreDeclarationExceptions = "true"))
     )
     public void direct1(SysUser sysUser) {
+        String a = null;
+        System.out.println(a.length());
         System.out.println();
         System.out.println("RabbitListener direct1 -- >  ");
         System.out.println(sysUser);
