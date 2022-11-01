@@ -166,7 +166,7 @@ public class FileUtil {
 
   public static void main(String[] args) throws Exception {
     File tempFile = new File("E:\\1234.pdf");
-    String url = "https://partnertest.mypicc.com.cn/ecooperation/policydownload/downloadurl.do?platfromcodes=CPI001814&policyNo=4FF0AE16055800E6E2C48289D9B77693046C01F5C7196F337F0D337E0D90C0FE&insuredID=5622D769B749E91A9BF519E0EDBAD291&flag=N";
+    String url = "https://www.95505.com.cn/tacapp/tiananapp/epolicy/eCarPolicyDownload?policyNo=6013242184006220000627&type=1&identifyNumber=91430400MA4L70DH3R";
     FileUtil.copyURLToFile(url, tempFile);
     String str =  Base64Util.fileToBase64(tempFile);
   }

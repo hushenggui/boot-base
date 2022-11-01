@@ -1,3 +1,4 @@
+/*
 package com.example.saasutil.service;
 
 import com.example.saasutil.util.Md5Util;
@@ -8,12 +9,14 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import lombok.extern.slf4j.Slf4j;
 
+*/
 /**
  * @program: boot-base
  * @description: 喀什广联达验证签名
  * @author: hushenggui
  * @create: 2021-11-03 17:43
- **/
+ **//*
+
 @Slf4j
 public class kashiService {
 
@@ -87,3 +90,4 @@ public class kashiService {
   }
 
 }
+*/

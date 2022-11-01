@@ -29,22 +29,28 @@ public class RsaService {
 
 
     //String ss = RSAUtil_SaaS.encrypt("00006", privateKey);
-    // String str = "ICbWWom7A/5Fytt4e1eJM3viO9UYlJ+O7hvagEoIJFlu3fCBnPeyOgI4zLitlazIEJhUAncVTlzNGt7JTVyDhWNizHUPLrn3fYZKwyihMt4=";
-    // System.out.println(RSAUtil_SaaS.decrypt(str, publicKey));
-     /*   System.out.println("basicBankAccount>>>" + encrypt("", privateKey));
-        System.out.println("basicBankName>>>" + encrypt("长城华西银行股份有限公司成都锦江支行", privateKey));
-        System.out.println("basicAccountName>>>" + encrypt("张丽君", privateKey));*/
+   /*  String str = "VBJ3ASx0EzwHxheTgxnG9W8tg91Wu8f2sYSqpbqMguOkd2OV8l0tuWNdIa0n4o6eNnTrUFN3o4ru4sw9MoJUVgiYyy7eMxe5WpnNzYjnlGGr3g+d3OTXLpzYaEpldQQJL0+Y/HZTAnVbPDpLKOIdsBdRvUDDpK9j+q4VLMOXqbA=";
+     System.out.println(RSAUtil_SaaS.decrypt(str, publicKey));*/
+        //System.out.println("basicBankAccount>>>" + encrypt("", privateKey));
+        System.out.println("name>>>" + encrypt("永安华府项目大区施工二标段", privateKey));
+        System.out.println("code>>>" + encrypt("E6101003506uw4qcL3M7001", privateKey));
+
+    //System.out.println(">>>" + encrypt("BQvw+mK7WH0i4FH4gQ5Of5nRaDWs9UA8DASk4cjreGE=", privateKey));
+/*    System.out.println(">>>" + decrypt("ExJQ6LkCwuSoveo3Q3NR+AgxJawPMRW8YU6QzSsqGIkOFYB/fnw2p5U/qaUe03xBY5T8r0mO/GDtpBPOqMRYiYF29nuw6QEbN2vS7WSX3pQPp6xickzL0elmB8JCnS//D72FwePcG24/nncGBmhWswMeR944hFfmjppnbVwN0ng=", publicKey));
+    System.out.println(">>>" + decrypt("D2nkU0V6WCRFa+Z4u/9q8NNYBDTjT5h1MaPfkZABTCe5HXwOxjG39MjKUxa6bvGC6M5I5Gfc9J6aYSDQ7FFr4REyPYk/faKRFxIIZn79hsU1LDaYt8TQwv9rhrsAgDrBed1uDeJijMgZvwbQxbBIX/Y3mSjOadoC4r6fH01VfM0=", publicKey));*/
+
+   // System.out.println(encrypt("gHXWAp+jgPBMDmCABCvxNU8m/H8LG79jnhL+A2emreJpuEuv7EtbAElOdANGsoQ/Xs3kAUMS33v/nXILDdrWo0SDoSJLcq3kqI014s8FaZ+KPa11BeaoNbgjAugqb+vhtTFSWGfI1afKAmZxmIdIzpsYOTe6zDt4tJi5ZNvkP1w=", privateKey));
 
    /* String s1 = "lAq9ExC54Eh+UvpBYH0iW/VOIMaCgCGj/tx7x7BkcE3+AZRYYD4/hTT8R0I8DiLBGc2AIUgXF38mVOOkfS/KgP72Fl5y/ZS4aF5wVu41lEYG9uj7tO23ubGvoBcjYBRnr9idwduZWpxpIMSu7p+6KReT/QTB2oeB3VsUJM4v4Ks=";
     String s2 = "lAq9ExC54Eh+UvpBYH0iW/VOIMaCgCGj/tx7x7BkcE3+AZRYYD4/hTT8R0I8DiLBGc2AIUgXF38mVOOkfS/KgP72Fl5y/ZS4aF5wVu41lEYG9uj7tO23ubGvoBcjYBRnr9idwduZWpxpIMSu7p+6KReT/QTB2oeB3VsUJM4v4Ks=";
     System.out.println(s1.equals(s2));*/
 
-    Random ran = new Random();
+    /*Random ran = new Random();
     Integer weight = ran.nextInt(999999);
     String salt = RSAUtil.encrypt(String.valueOf("12610100791694474Y"), privateKey);
     System.out.println(salt);
     String ss = "r3Jcix5qLBSs/Ukq9QxY/qihwHp1ymMkHk9blmQfgNnD78cXjELbtQxEyRP4ltmnKJ/RhNhjYZ1jOU0rWLDCjRwMU+oKRSn9pooB/voHpDD5CzXPgnzZoXBjV4I3fAzLj18LDmZwQsiA1O2zPKUi1Q/wtboX31SfEr7goT7dxfMhBzD1/UacDpc5YaVEsjj8NA1BAE1QCRVUVWMpgMTGwayMLwl25/pPNu0T6VO+xiHrUPJIMFhBtF3jofBLiWBshdXRUDHk9VUkWRoAjjaOUDiDPIJDTKOpTAJ/ADilvoj8jdv0safJG+wtvxDOYudW23eKaTWlHMpKIr3ZY8vArg==";
-    System.out.println(RSAUtil_SaaS.decrypt(ss, publicKey));
+    System.out.println(RSAUtil_SaaS.decrypt(ss, publicKey));*/
   }
 
 }

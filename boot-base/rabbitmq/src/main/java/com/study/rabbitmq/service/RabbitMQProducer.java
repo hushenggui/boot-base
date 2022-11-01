@@ -28,7 +28,25 @@ public class RabbitMQProducer {
             rabbitTemplate.convertAndSend(RabbitListenerDirect.exchangeName, "work-direct", sysUser);
         }*/
         SysUser sysUser = new SysUser();
-        sysUser.setName("zhangsan");
+        sysUser.setName("zhangsan111");
+        sysUser.setRoutingKey("work-direct");
+        sysUser.setId(UUIDGenUtil.createUUID());
+        rabbitTemplate.convertAndSend(RabbitListenerDirect.exchangeName, "work-direct", sysUser);
+
+
+        sysUser.setName("zhangsan2222");
+        sysUser.setRoutingKey("work-direct");
+        sysUser.setId(UUIDGenUtil.createUUID());
+        rabbitTemplate.convertAndSend(RabbitListenerDirect.exchangeName, "work-direct", sysUser);
+
+
+        sysUser.setName("zhangsan3333");
+        sysUser.setRoutingKey("work-direct");
+        sysUser.setId(UUIDGenUtil.createUUID());
+        rabbitTemplate.convertAndSend(RabbitListenerDirect.exchangeName, "work-direct", sysUser);
+
+
+        sysUser.setName("zhangsan4444");
         sysUser.setRoutingKey("work-direct");
         sysUser.setId(UUIDGenUtil.createUUID());
         rabbitTemplate.convertAndSend(RabbitListenerDirect.exchangeName, "work-direct", sysUser);
