@@ -15,16 +15,16 @@ import java.util.Map;
  * @author: hushenggui
  * @create: 2021-12-30 10:57
  **/
-public class newGuotaiNormal {
+public class newGuotaiNormal extends Object{
 
 
   public static void main(String[] args) throws Exception {
     String json = "{\n"
-        + "    \"appkey\": \"finance_gbinsure\",\n"
-        + "    \"timestamp\": \"2022-09-23 14:42:59\",\n"
-        + "    \"applyno\": \"TBaoHanGBS2022083016481484550\",\n"
-        + "    \"baohanno\": \"SVO62227222162554091\",\n"
-        + "    \"sign\": \"e82b26e413d92b89365c03eb24293e8f9096f0d33e7c4245f53e138b749a1af1\"\n"
+        + "\t\"appkey\": \"finance_gbinsure\",\n"
+        + "\t\"timestamp\": \"2023-02-01 16:39:32\",\n"
+        + "\t\"applyno\": \"TBaoHanGBS2023013012010599003\",\n"
+        + "\t\"baohanno\": \"PBAQ20236501Q000E00288\",\n"
+        + "\t\"sign\": \"4f7efcc87a23d3fbb3e146b9052d18916540473768f411b5df0fb9b27ef78f7c\"\n"
         + "}";
 
     String appKey = "finance_gbinsure";

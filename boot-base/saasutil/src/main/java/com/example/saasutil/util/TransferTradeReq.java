@@ -73,19 +73,19 @@ public class TransferTradeReq implements Serializable {
   protected BigDecimal feeAmount;
 
   // /*** * 转账-付方账号 */
-  // @ApiModelProperty(value = "转账-付方账号-转账业务必填", required = true, example = "9559980111111111412")
+  // //@ApiModelProperty(value = "转账-付方账号-转账业务必填", required = true, example = "9559980111111111412")
   // private String payAccount;
   //
   // /** 转账-付方账户名称 */
-  // @ApiModelProperty(value = "转账-付方账户名-转账业务必填", required = true, example = "王小光")
+  // //@ApiModelProperty(value = "转账-付方账户名-转账业务必填", required = true, example = "王小光")
   // private String payAccountName;
   //
   // /** 转账-付方账户名称 */
-  // @ApiModelProperty(value = "转账-付方银行号", example = "305")
+  // //@ApiModelProperty(value = "转账-付方银行号", example = "305")
   // private String payBankNo;
   //
   // /** 转账-付方账户名称 */
-  // @ApiModelProperty(value = "转账-付方银行名称", example = "民生银行")
+  // //@ApiModelProperty(value = "转账-付方银行名称", example = "民生银行")
   // private String payBankName;
 
   /** 转账-对方账号 */
@@ -106,7 +106,7 @@ public class TransferTradeReq implements Serializable {
   private String oppCityCode;
 
   /** 渠道编号 */
-  // @ApiModelProperty(value = "渠道编号", example = "0000")
+  // //@ApiModelProperty(value = "渠道编号", example = "0000")
   // private String channelCode;
   private String bankBranchName;
 

@@ -10,22 +10,19 @@ import com.example.saasutil.util.SignUtil;
  **/
 public class insranceService1 {
   public static void main(String[] args) {
-    String reqXml2 = "<?xml version='1.0' encoding='utf-8'?>\n"
+    String reqXml2 = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"
         + "<queryPolicyRequest>\n"
         + "    <requestHead>\n"
-        + "        <requestUUID>0c2be428-40ed-4667-9b09-9e76c5f70e94</requestUUID>\n"
-        + "        <sign>6904deaea05efca3cd187170a64ae724</sign>\n"
+        + "        <requestUUID>3fc6099c-3021-4a5b-af8c-e3a3b14c8300</requestUUID>\n"
+        + "        <sign>a875b15b139ddd6c358a0538ff17c334</sign>\n"
         + "    </requestHead>\n"
         + "    <requestBody>\n"
-        + "        <policyNo>2112223405002200001R</policyNo>\n"
-        + "        <proposalNo>1112223405002200001Z</proposalNo>\n"
-        + "        <payType>1</payType>\n"
-        + "        <payTime>2022-06-07 14:14:45</payTime>\n"
-        + "        <insuranceCode>00004</insuranceCode>\n"
-        + "        <downLoadUrl>\n"
-        + "            <![CDATA[https://test-open.zking.com/dz/1MqIp2M]]>\n"
-        + "        </downLoadUrl>\n"
-        + "        <guaranteeUrl></guaranteeUrl>\n"
+        + "        <policyNo>PBTP22430105070000960001</policyNo>\n"
+        + "        <proposalNo>0323130184020220000340</proposalNo>\n"
+        + "        <downLoadUrl>https://iopen-uat.ccic-net.com.cn/management-service/rest/v1/epolicy/download/PBTP22430105070000960001-6527BAC7A7A032892D3C604B6E64269851340C9BA782240011E70413B7F6E6B7</downLoadUrl>\n"
+        + "        <payType>3</payType>\n"
+        + "        <payTime>2022-11-17 09:01:33</payTime>\n"
+        + "        <insuranceCode>00005</insuranceCode>\n"
         + "    </requestBody>\n"
         + "</queryPolicyRequest>";
 

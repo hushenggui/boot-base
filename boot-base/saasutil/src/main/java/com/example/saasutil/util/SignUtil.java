@@ -94,6 +94,7 @@ public class SignUtil {
     try {
       //String sign = sign(xmlStr,key);
       String xmlValues = XmlUtil.getNodes(bodyNode, xmlStr);
+      System.out.println(xmlValues);
       String sign = Md5Utils.MD5(xmlValues + key);
 
       document = DocumentHelper.parseText(xmlStr);
