@@ -16,20 +16,20 @@ public class OldGuotai {
         + "<root>\n"
         + "    <AccName>PRJ_Receipt</AccName>\n"
         + "    <body>\n"
-        + "        <OrderNo>10110102111002022092312162262473</OrderNo>\n"
-        + "        <PolicyNo>10671003901783314570</PolicyNo>\n"
-        + "        <DownloadUrl>https://pj-jy.gongbao.cn/upload/10671003901783314570.pdf</DownloadUrl>\n"
-        + "        <Amount>570000.00</Amount>\n"
-        + "        <InsuranceTime>2022-09-29 00: 00: 00至2022-12-27 23: 59: 59</InsuranceTime>\n"
-        + "        <InsuranceName>中国平安财产保险股份有限公司</InsuranceName>\n"
-        + "        <InsuranceAddress>深圳市福田区益田路5033号平安金融中心12、13、38、39、40层</InsuranceAddress>\n"
-        + "        <PhoneNumber>95511</PhoneNumber>\n"
-        + "        <BidderNumber>18168298388</BidderNumber>\n"
+        + "        <OrderNo>TBaoHanGB2023032211450547232</OrderNo>\n"
+        + "        <PolicyNo>EP202303810024104173</PolicyNo>\n"
+        + "        <DownloadUrl>https://eeds-jy.gongbao.cn/upload/EP202303810024104173.pdf</DownloadUrl>\n"
+        + "        <Amount>40000.00</Amount>\n"
+        + "        <InsuranceTime>2023-03-27 00:00:00 至 2023-06-24 23:59:59</InsuranceTime>\n"
+        + "        <InsuranceName>太平财产保险有限公司</InsuranceName>\n"
+        + "        <InsuranceAddress>深圳市福田区益田路6001号太平金融大厦33层</InsuranceAddress>\n"
+        + "        <PhoneNumber>95589</PhoneNumber>\n"
+        + "        <BidderNumber>18047724628</BidderNumber>\n"
         + "    </body>\n"
-        + "    <Sign>EED72DB1DC4ABA1AAC50FFDFCCC0E2CE</Sign>\n"
+        + "    <Sign>4DAC15AEB21A55DA67532F8A3F823845</Sign>\n"
         + "</root>";
 
-    String key = "BQ7gZnRvhTq7fM1DrS6Xm66r";
+    String key = "B86C37C1A09E49737E2F3139BCC35D78";
     System.out.println(SignUtil.sign(xml, "Sign","body", key));
 
 

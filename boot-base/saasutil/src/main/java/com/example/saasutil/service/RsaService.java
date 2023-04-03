@@ -14,8 +14,11 @@ import java.util.Random;
  * @create: 2021-11-03 17:48
  **/
 public class RsaService {
-  public static final String publicKey = "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCz2nLfMhMjXoltHLsJ/LEzVJ5RM6QsfxKRoh416YBqTJGWy8I3ukzV+SPmMI1tkQAmmr9IBDMIZfB41dv33tqRStbGi7dsHy/NX2+V8kbyBe2zUjR+kap+04PLes6Q7U5FjDIRYB9F1NsuR3xp02yJxbdMVoRT5fK3AFTb8U/3HwIDAQAB";
-  public static final String privateKey = "MIICdgIBADANBgkqhkiG9w0BAQEFAASCAmAwggJcAgEAAoGBALPact8yEyNeiW0cuwn8sTNUnlEzpCx/EpGiHjXpgGpMkZbLwje6TNX5I+YwjW2RACaav0gEMwhl8HjV2/fe2pFK1saLt2wfL81fb5XyRvIF7bNSNH6Rqn7Tg8t6zpDtTkWMMhFgH0XU2y5HfGnTbInFt0xWhFPl8rcAVNvxT/cfAgMBAAECgYBxNIfnixpWwfOYdWQZdi+HUrTQAcRNqbJjbnq7jn0g648cLqbR8vbYHBiHlHoAxCsnIXJS/ymsGJYTSPFLBL/ncm1VMcmslik1AIGaHXIfpdMm8yFjK7UmxJ+Pt49I9qLFy3q7LxAiiE8MwJQtULpLGCfzXU91kFD4Sfg5Cl9SGQJBAO40Oamih4OzQ7miLt64NWUpdBZxV/+HZiAQL843rLKMQKQi0eUZ2QBipgzJ6p7eQlYKyeRj9NsZL1xjYAdGgnMCQQDBSjyCd8zroYFaJggWo/KzTgz2vPL31mnOsx+cb3fkuIV9yuEqFoMzE4lquz91cnvflbMZOL+1AAPgfCewqtGlAkEAtvuXcCBSSXFkDS3xI1YObm+xpavcFYdFhEvq7VcHawEihvPYmU2JzSn6tMhHW1MRUldnT/MZHVXzc91C31Pi0QJAU1bPyi0fRMVpAVZ+jEx6G4denZAQbn2bN00SJyAEoLBSlk9AUCZOwVn+GO/NR7Vp5ZglFY3bUo5EHalKb6jnJQJAfIS/yO2Iv87moZBoVr+rRIrowvSqDKOfAG1tztUdfmj5KLy7eRcdNy64zAEB4lgG5jK/SxQJQsBqL0kgOrbkJQ==";
+  public static final String publicKey = "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDV41tzSHxVQHzlC+4Th7HVikA3"
+      + "feqDXA/V5xcRLbGT6QC2aEQwke4+kUL6CqdsRwU2OTwTdzeJORwxBhzattak28tR"
+      + "TcxiloSA3lE6KqdnjfQyQ2FJ72RAUxyr2I2n45laJXLYOfHBI+lPOn1ogvzCpI5F"
+      + "p11xgRzG713opeRV3QIDAQAB";
+  public static final String privateKey = "MIICXAIBAAKBgQD6AkJkkiSX5U9JdNaOZHjUOJrIJE3E5kN72VX8DYy6zCzwGliqKcCb5fLzuJKyNGF3/C1MmgwFCUPQlI8kXi9pgEzttjwB7zTlO+EZVnATZb37u1aEV2Nzi8WjPbM9w4CVoBkysXNoEMx8lQonG/GeK051z/7bz+m3DKDUR8nSYQIDAQABAoGAeB6dx7Rv4ItMjP6WF9QuOcj4lTDcLL51rgu+RFw+QYHYFYSTFS76W+0fzfnggb6pFf0Txro9DC5nZs/59n9KR3NBNAeGrZ0Uv4PQb9/c5oSQ+VHrSz8Lcn6laIMKInI6BwcRKwkZfF5Gdopnx6j9EfzBFB8gqrzcOCHqpXnbnAECQQD+zIjcj2xjnri164nVJCZJmVptd/1VXYu6R8AFKIhe19DCXCm4A3VlzmJa4lGyWC1tcNmWlpOqsDLKqGCaRBnbAkEA+y/xyZZMaLSj/5XruvLmEtiuB1PiPa0MKLZI4DHy0jdkmNvY5BE0S8ADt062DoEGpUFgIACoKl8RzSKJwUkvcwJAZLMXP/wa/UAkhhlhrvALhbjq6Sqr34oKCAQFWsSLKNioc7gS8NvFEQhBDOQ3H4ID6iXYiNBX6fSbDkb/btiNUwJAG8K5uyjEOxIzycx86AVuTgjqet7Xcy+L13gF59k9V+RNVuN9Pf90wyZugrTNRB8YZ+0ovYC1FTG6muxFQzpeZwJBALEOQBMdSk1BVvqlvFyQNcv3lRxQoFlVcOwlefMRLsjRS3+1lvnCfeW2tP6AADEhe0BccLNAXmDxuGkUBHS+uIc=";
 
 
   public static void main(String[] args) {
@@ -32,9 +35,9 @@ public class RsaService {
    /*  String str = "VBJ3ASx0EzwHxheTgxnG9W8tg91Wu8f2sYSqpbqMguOkd2OV8l0tuWNdIa0n4o6eNnTrUFN3o4ru4sw9MoJUVgiYyy7eMxe5WpnNzYjnlGGr3g+d3OTXLpzYaEpldQQJL0+Y/HZTAnVbPDpLKOIdsBdRvUDDpK9j+q4VLMOXqbA=";
      System.out.println(RSAUtil_SaaS.decrypt(str, publicKey));*/
         //System.out.println("basicBankAccount>>>" + encrypt("", privateKey));
-    String priveat =  encrypt("51050188083609123456", privateKey);
-        System.out.println("name>>>" + priveat);
-    System.out.println("name>>>" + decrypt(priveat, publicKey));
+    String priveat =  encrypt("hbqRO6Vfd4odKI4iIde9/EpRBv6IOIHFrVJ7sBm2Xt4=", privateKey);
+    System.out.println("name>>>" + priveat);
+    //System.out.println("name>>>" + decrypt(priveat, publicKey));
        // System.out.println("code>>>" + decrypt("bf7zE8NVa4UBN3KH5ejChIwXLSQQYs7Z67SeMwWQYKar+1rut0P0+hHgs/0r5nt0NF6VNLYZw0Bg8/O3mJwmmfn51yxjO5i77R5PWENu1I6+rMDjCZuSpg2CO8UklvSmV1igKOy7OcHnjl1wzUKjeBzGHaed4IITsomSivIg7Yw=", publicKey));
         //System.out.println("code>>>" + encrypt("E6101123506AP85qMfGf003", privateKey));
 
