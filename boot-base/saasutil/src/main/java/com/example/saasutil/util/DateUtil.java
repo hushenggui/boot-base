@@ -8,6 +8,8 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 import org.springframework.util.StringUtils;
 
 public class DateUtil {
@@ -15,6 +17,7 @@ public class DateUtil {
     public static final String DEFAULT_FORMAT = "yyyyMMddHHmmss";
     public static final String SHORT_FORMAT = "yyyyMMdd";
     public static final String YYYYMMDDHHMMSS = "yyyy-MM-dd HH:mm:ss";
+
 
     /**
      * 将字符串转化为DATE
@@ -1175,7 +1178,7 @@ public class DateUtil {
     public static String fmtDateToUnsigned(Date date) {
         return fmtDateToStr(date, "yyyyMMddHHmmss");
     }
-    
+
     /**
      * 是否无符号时间字符串
      * @return
@@ -1183,7 +1186,7 @@ public class DateUtil {
     public static boolean isUnsignedDate(String dateStr) {
         return dateStr.length() == 8 || dateStr.length() == 14;
     }
-    
+
     public static String diyFormat(String dateStr) {
         if (isUnsignedDate(dateStr)) {
             return getConvertStr(dateStr, "0");

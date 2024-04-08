@@ -165,8 +165,8 @@ public class FileUtil {
   }
 
   public static void main(String[] args) throws Exception {
-    File tempFile = new File("E:\\1234.pdf");
-    String url = "https://www.95505.com.cn/tacapp/tiananapp/epolicy/eCarPolicyDownload?policyNo=6013242184006220000627&type=1&identifyNumber=91430400MA4L70DH3R";
+    File tempFile = new File("E:\\1234999.pdf");
+    String url = "https://textapi.fadada.com/api2/downLoadContract.action?app_id=500825&v=2.0&timestamp=20230523150005&contract_id=PREWL202305220357605768&msg_digest=NjNBQzREMzMxODUyQzcyRURBQzJDNUE4MzI0N0I3QkNEOENGNzE1Qw==";
     FileUtil.copyURLToFile(url, tempFile);
     String str =  Base64Util.fileToBase64(tempFile);
   }
@@ -286,6 +286,6 @@ public class FileUtil {
     }
     return true;
   }
-  
+
 }
 

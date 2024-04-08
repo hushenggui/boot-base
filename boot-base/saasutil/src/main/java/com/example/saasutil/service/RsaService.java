@@ -3,8 +3,11 @@ package com.example.saasutil.service;
 import static com.example.saasutil.util.RSAUtil.decrypt;
 import static com.example.saasutil.util.RSAUtil.encrypt;
 
+import com.example.saasutil.util.GsonUtil;
+import com.example.saasutil.util.JacksonUtils;
 import com.example.saasutil.util.RSAUtil;
 import com.example.saasutil.util.RSAUtil_SaaS;
+import com.example.saasutil.vo.CreateOrderRequestBodyVo;
 import java.util.Random;
 
 /**
@@ -14,11 +17,8 @@ import java.util.Random;
  * @create: 2021-11-03 17:48
  **/
 public class RsaService {
-  public static final String publicKey = "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDV41tzSHxVQHzlC+4Th7HVikA3"
-      + "feqDXA/V5xcRLbGT6QC2aEQwke4+kUL6CqdsRwU2OTwTdzeJORwxBhzattak28tR"
-      + "TcxiloSA3lE6KqdnjfQyQ2FJ72RAUxyr2I2n45laJXLYOfHBI+lPOn1ogvzCpI5F"
-      + "p11xgRzG713opeRV3QIDAQAB";
-  public static final String privateKey = "MIICXAIBAAKBgQD6AkJkkiSX5U9JdNaOZHjUOJrIJE3E5kN72VX8DYy6zCzwGliqKcCb5fLzuJKyNGF3/C1MmgwFCUPQlI8kXi9pgEzttjwB7zTlO+EZVnATZb37u1aEV2Nzi8WjPbM9w4CVoBkysXNoEMx8lQonG/GeK051z/7bz+m3DKDUR8nSYQIDAQABAoGAeB6dx7Rv4ItMjP6WF9QuOcj4lTDcLL51rgu+RFw+QYHYFYSTFS76W+0fzfnggb6pFf0Txro9DC5nZs/59n9KR3NBNAeGrZ0Uv4PQb9/c5oSQ+VHrSz8Lcn6laIMKInI6BwcRKwkZfF5Gdopnx6j9EfzBFB8gqrzcOCHqpXnbnAECQQD+zIjcj2xjnri164nVJCZJmVptd/1VXYu6R8AFKIhe19DCXCm4A3VlzmJa4lGyWC1tcNmWlpOqsDLKqGCaRBnbAkEA+y/xyZZMaLSj/5XruvLmEtiuB1PiPa0MKLZI4DHy0jdkmNvY5BE0S8ADt062DoEGpUFgIACoKl8RzSKJwUkvcwJAZLMXP/wa/UAkhhlhrvALhbjq6Sqr34oKCAQFWsSLKNioc7gS8NvFEQhBDOQ3H4ID6iXYiNBX6fSbDkb/btiNUwJAG8K5uyjEOxIzycx86AVuTgjqet7Xcy+L13gF59k9V+RNVuN9Pf90wyZugrTNRB8YZ+0ovYC1FTG6muxFQzpeZwJBALEOQBMdSk1BVvqlvFyQNcv3lRxQoFlVcOwlefMRLsjRS3+1lvnCfeW2tP6AADEhe0BccLNAXmDxuGkUBHS+uIc=";
+  public static final String publicKey = "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDZkpPtGSRku0c4r0pWvVITFIYOgOlbrKVhuIIYW1CVWTv7VlbztZb14r0Wx1C++d7HZgnHNorGjKE7mTtTUqpjtV5KNaJF/nu8dg5iShyKeK7KmIitsBT5UIJb5x9/uj/8q88dUlJewubPE1HJNf6/0R2yuAdOKOkslGn37k/M+wIDAQAB";
+  public static final String privateKey = "MIICdwIBADANBgkqhkiG9w0BAQEFAASCAmEwggJdAgEAAoGBANmSk+0ZJGS7RzivSla9UhMUhg6A6VuspWG4ghhbUJVZO/tWVvO1lvXivRbHUL753sdmCcc2isaMoTuZO1NSqmO1Xko1okX+e7x2DmJKHIp4rsqYiK2wFPlQglvnH3+6P/yrzx1SUl7C5s8TUck1/r/RHbK4B04o6SyUaffuT8z7AgMBAAECgYEAoISKzG8zMXoV9pUktE/i4J7QtJyZDgCW1zzIBm5ASp9WKH0vk4gSgwAwX0DXqr4whU4bwrTTt96DCbRoV3XyrFb1DlYm3yEm2cgYukxNMtxhlL3Tpu7bL3YdGYaAIYYtgbwzvvMvT7omKI85iztweKRWQ0VjR8sdT8oE9gAsSykCQQDzrVvH6MEayi2rsesmg2Fd0bJYCp3zUuv6kbeXy+mANYbeePjPTbu/kmir/HZn4fnJfoGxCW/o0LxW56ubb0v1AkEA5JNE9RoEbRAA5SDJpRi/1u/KFH35BU88lVGixXDNaS8YFWjZAswIUViyC7ms2cs8bHgKNt4zOhSJbM1DtsePLwJAWntBvE5Z/eea48kx5uAb9GlcDsMKeYKN60HWaUAnWRsHFG7Y/KkBkRX9VfdtxA8t4DrgT2uQqWNwu9hUaWf/TQJBAIwFl2GafYmeGx5BtqUXgzWVETL6dJkHEDLcnpza3EqKGfPLldz7xkCm1/MM3FFTCgHci01PUwxKVmE7YTbQCusCQHwyerbP/DaI/eUkyE06yzbrvAJXmFR3ck+AZaQi3eiS5WGXeOMKBlVTOShsLdn82v6vKzfRggkEWeVkB+mcDaU=";
 
 
   public static void main(String[] args) {
@@ -35,8 +35,13 @@ public class RsaService {
    /*  String str = "VBJ3ASx0EzwHxheTgxnG9W8tg91Wu8f2sYSqpbqMguOkd2OV8l0tuWNdIa0n4o6eNnTrUFN3o4ru4sw9MoJUVgiYyy7eMxe5WpnNzYjnlGGr3g+d3OTXLpzYaEpldQQJL0+Y/HZTAnVbPDpLKOIdsBdRvUDDpK9j+q4VLMOXqbA=";
      System.out.println(RSAUtil_SaaS.decrypt(str, publicKey));*/
         //System.out.println("basicBankAccount>>>" + encrypt("", privateKey));
-    String priveat =  encrypt("hbqRO6Vfd4odKI4iIde9/EpRBv6IOIHFrVJ7sBm2Xt4=", privateKey);
-    System.out.println("name>>>" + priveat);
+    String body = "{\"orderId\":\"10199106501002023040414152095081\",\"projName\":\"4FE6EDE5663\",\"bidName\":\"4FE6EDE5663\",\"bidCode\":\"B30C410D665\",\"tendName\":\"611CC9C8422\",\"tendCode\":\"599E17BC8D3\",\"biddName\":\"工保科技（浙江）有限公司\",\"biddCode\":\"91430105MA4Q4UU10E\",\"biddPhone\":\"13627116142\",\"projType\":\"CONSTRUCTION_PROJECT\",\"premium\":400.00,\"amount\":50000.00,\"startDate\":\"20230504145527\",\"endDate\":\"20230802145527\",\"expireDay\":180,\"endorse\":\"一、本特别约定，作为投标保证保险保单的有效组成部分，与保险合同、保单或其它保险凭证具有同等法律效力。二、保险单生效时间为投保项目投标截止时间，保险期间为投保项目《招标文件》中载明的投标有效期。三、投保人违反所投项目《招标文件》规定要求导致投标保证金不予退还或罚没情形的均属于本保单保险责任。四、退保处理1.开标前投保人自愿放弃投保或项目发生中止、暂停的，可进行退保；2.开标前项目发生流标、终止的，可进行退保；3.开标后项目发生流标的，可进行退保；4.除上述 3 种情形外均不予退保。5.投保人办理退保事宜，满足退保条件的，保险费全额退还。五、线下理赔材料提供如下：1.索赔申请书；2.招标文件和投标文件；3.投保人违约证明材料。六、保险公司应在收到索赔申请书和相关材料后 10 个工作日内完成理赔。七、保险人向被保险人赔偿后，保险人享有向投保人追偿的权利。八、项目类型：。九、支付账户：{basicAccountName}，支付账号：{basicBankAccount}，支付金额：{payAmount}元\"}";
+    CreateOrderRequestBodyVo createOrderRequestBodyVo = JacksonUtils.jsonString2Obj(body,
+        CreateOrderRequestBodyVo.class);
+    String priveate =  encrypt(GsonUtil.toJsonSort(createOrderRequestBodyVo), privateKey);
+    System.out.println("name>>>" + priveate);
+    boolean check = RSAUtil.check(GsonUtil.toJsonSort(createOrderRequestBodyVo), priveate, publicKey);
+    System.out.println(check);
     //System.out.println("name>>>" + decrypt(priveat, publicKey));
        // System.out.println("code>>>" + decrypt("bf7zE8NVa4UBN3KH5ejChIwXLSQQYs7Z67SeMwWQYKar+1rut0P0+hHgs/0r5nt0NF6VNLYZw0Bg8/O3mJwmmfn51yxjO5i77R5PWENu1I6+rMDjCZuSpg2CO8UklvSmV1igKOy7OcHnjl1wzUKjeBzGHaed4IITsomSivIg7Yw=", publicKey));
         //System.out.println("code>>>" + encrypt("E6101123506AP85qMfGf003", privateKey));

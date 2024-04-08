@@ -13,19 +13,19 @@ import com.google.gson.JsonElement;
 import com.google.gson.reflect.TypeToken;
 
 /**
- * 
- * 
+ *
+ *
  * 类职责：<br/>
- *     
+ *
  * <p>Title: DataConstant.java</p>
  * <p>Description: </p>
  * <p>Copyright: Copyright (c) 2020 工保科技 </p>
  * <p>Company: 工保科技 </p>
- *  
+ *
  * <p>Author:Cmexico.Li</p>
  * <p>CreateTime:2020年11月25日下午6:49:25
  * <p>$LastChangedBy$</p>
- * <p>$LastChangedRevision$ </p>  
+ * <p>$LastChangedRevision$ </p>
  * <p>$LastChangedDate$ </p>
  * <p>$Id$ </p>
  */
@@ -51,7 +51,7 @@ public class GsonUtil {
 
 
   /**
-   * 
+   *
    * @param object
    * @return
    */
@@ -79,11 +79,23 @@ public class GsonUtil {
    * @return
    */
   public static String toJsonSort(Object object) {
+    Gson gson = new GsonBuilder().disableHtmlEscaping().create();
+    JsonElement e = gson.toJsonTree(object);
+    _sortJsonElement(e, GsonSerializerFeature.SortField);
+    return gson.toJson(e);
+  }
+
+  /**
+   * 默认Key 排序
+   * @param object
+   * @return
+   */
+  public static String toJsonSortDefault(Object object) {
     return _sort(object, GsonSerializerFeature.SortField);
   }
 
   /**
-   * 
+   *
    * @param <T>
    * @param content
    * @param clazz
@@ -108,7 +120,7 @@ public class GsonUtil {
   }
 
   /**
-   * 
+   *
    * @param <T>
    * @param content
    * @param clazz
@@ -123,7 +135,7 @@ public class GsonUtil {
   }
 
   /**
-   * 
+   *
    * @param <T>
    * @param content
    * @return
@@ -138,7 +150,7 @@ public class GsonUtil {
 
 
   /**
-   * 
+   *
    * @param <T>
    * @param gsonString
    * @return
@@ -219,6 +231,19 @@ public class GsonUtil {
   private static String _sort(Object object, GsonSerializerFeature serializerFeature) {
     JsonElement e = gson.toJsonTree(object);
     _sortJsonElement(e, serializerFeature);
+    return gson.toJson(e);
+  }
+
+
+  /**
+   * 禁止字符转义
+   * @param object
+   * @return
+   */
+  public static String sortObjectToJson(Object object) {
+    Gson gson = new GsonBuilder().disableHtmlEscaping().create();
+    JsonElement e = gson.toJsonTree(object);
+    _sortJsonElement(e, GsonSerializerFeature.SortField);
     return gson.toJson(e);
   }
 

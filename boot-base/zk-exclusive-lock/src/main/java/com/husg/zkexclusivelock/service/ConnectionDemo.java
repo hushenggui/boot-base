@@ -13,7 +13,7 @@ public class ConnectionDemo {
 
     public static void main(String[] args) {
         try {
-            final CountDownLatch countDownLatch=new CountDownLatch(1);
+            final CountDownLatch countDownLatch = new CountDownLatch(1);
             ZooKeeper zooKeeper= new ZooKeeper(Constants.zkServer , 4000, new Watcher() {
                         @Override
                         public void process(WatchedEvent event) {

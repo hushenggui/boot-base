@@ -4,6 +4,9 @@ import cn.hutool.core.codec.Base64;
 import cn.hutool.crypto.SecureUtil;
 import cn.hutool.crypto.asymmetric.KeyType;
 import cn.hutool.crypto.asymmetric.RSA;
+import com.example.saasutil.enums.DateFinalFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.util.StringUtils;
 import sun.misc.BASE64Decoder;
@@ -14,19 +17,19 @@ import java.security.Signature;
 import java.security.spec.X509EncodedKeySpec;
 
 /**
- * 
- * 
+ *
+ *
  * 类职责：<br/>
- *     
+ *
  * <p>Title: DataConstant.java</p>
  * <p>Description: </p>
  * <p>Copyright: Copyright (c) 2020 工保科技 </p>
  * <p>Company: 工保科技 </p>
- *  
+ *
  * <p>Author:Cmexico.Li</p>
  * <p>CreateTime:2020年11月3日上午9:40:55
  * <p>$LastChangedBy$</p>
- * <p>$LastChangedRevision$ </p>  
+ * <p>$LastChangedRevision$ </p>
  * <p>$LastChangedDate$ </p>
  * <p>$Id$ </p>
  */
@@ -41,6 +44,7 @@ public class RSAUtil {
    * @return
    */
   public static String encrypt(String orgData, String privateKey) {
+    System.out.println("加密字符串: " + orgData);
     RSA rsa = SecureUtil.rsa(privateKey, null);
     return new String(Base64.encode(rsa.encrypt(orgData, KeyType.PrivateKey)));
   }
@@ -67,8 +71,9 @@ public class RSAUtil {
    */
   public static boolean check(String orgData, String signData, String publicKey) {
     RSA rsa = SecureUtil.rsa(null, publicKey);
+    log.debug("参数内容为：" + orgData);
     String data = new String(rsa.decrypt(signData, KeyType.PublicKey));
-    log.info("paymentNoticeReqPayNoticeRespDto orgData {} data {}", orgData, data);
+    log.debug("解密内容为：" + data);
     if (StringUtils.hasText(data) && orgData.equals(data)) {
       return true;
     } else {
@@ -91,6 +96,21 @@ public class RSAUtil {
       e.printStackTrace();
     }
     return false;
+  }
+
+  public static void main(String[] args) {
+    String dateStr = "20230620110000";
+    SimpleDateFormat sdf = new SimpleDateFormat(DateFinalFormat.YYYYMMddHHmmss.getCode());
+    SimpleDateFormat sdf1 = new SimpleDateFormat(DateFinalFormat.YYYY_MM_dd_HH_mm_ss.getCode());
+    String bidOpenTime = "";
+    try {
+      bidOpenTime = sdf1.format(sdf.parse(dateStr));
+    }catch (Exception e) {
+      e.printStackTrace();
+      log.error("转换开标时间异常：{}", e.getMessage());
+    }
+    System.out.println(bidOpenTime);
+
   }
 
 }

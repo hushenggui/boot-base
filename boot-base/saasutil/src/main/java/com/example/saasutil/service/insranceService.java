@@ -11,23 +11,26 @@ import java.util.HashMap;
  **/
 public class insranceService {
   public static void main(String[] args) {
-    String reqXml2 = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>\n"
+    String reqXml2 = "<?xml version=\"1.0\" encoding=\"utf-8\"?>\n"
         + "<queryPolicyRequest>\n"
         + "    <requestHead>\n"
-        + "        <sign>5B2BF4FA054A293390F0E685105B4C64</sign>\n"
-        + "        <requestUUID>5cfcac63-05e3-48e6-bc86-1e451932c4d6</requestUUID>\n"
+        + "        <sign>f557b2c1b104bee497ed69060c34145b</sign>\n"
+        + "        <requestUUID>1710233400602</requestUUID>\n"
         + "    </requestHead>\n"
         + "    <requestBody>\n"
-        + "        <policyNo>6230308002222000012</policyNo>\n"
-        + "        <proposalNo>T230308002222000023</proposalNo>\n"
+        + "        <policyNo>HAB112227R1HHLKPTC00</policyNo>\n"
+        + "        <proposalNo>TAB112227R1HHLKPTC00</proposalNo>\n"
         + "        <payType>3</payType>\n"
-        + "        <payTime>2023-03-0210:18:59</payTime>\n"
-        + "        <downLoadUrl>http://devyun.guorenpcic.com/plcy/myPolicy/getEpolicyUrl?policyNo=6230308002222000012</downLoadUrl>\n"
-        + "        <insuranceCode>00020</insuranceCode>\n"
+        + "        <payTime>2024-03-12 16:49:48</payTime>\n"
+        + "        <insuranceCode>00009</insuranceCode>\n"
+        + "        <downLoadUrl>\n"
+        + "            <![CDATA[https://iepolicy.sinosig.com/digitalBill_download/downloadCmsPolicy.action?files=e2be26047d520edfdb7727673affba93bc27baf93b2fae01d6dd7f1c4739ec13085fa08208bce6ad8ea85d7b56328b7e384e412ccdfc3d08487ce9ac988882f934f39d78680d9112ea0c87a7e999209a82e480cb2a20bb7af8094bfb1d1bc410&type=C]]>\n"
+        + "        </downLoadUrl>\n"
         + "    </requestBody>\n"
         + "</queryPolicyRequest>";
 
-    String signKey = "MeTKJnC3fIAxeer8erADRTlJ";
+
+    String signKey = "3A6F4D7A5468091D1DA8C9AE9C0B1610";
    /* String sign = SignUtil.getSignFromXml(reqXml2, signKey, "requestBody", "00020", "");
     System.out.println(sign);
     String json =  SignUtil.signMap(reqXml2, new HashMap<>(), "sign", "requestBody", sign);

@@ -27,6 +27,7 @@ public class ZhulongYbService {
         + "}";
 
     System.out.println(ZhuLongYBUtil.encode(str, "62b116f6-2f58-4a69-a85e-1825d3f8104b"));
+
   }
 
 }

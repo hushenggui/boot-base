@@ -80,7 +80,7 @@ public class DecryptPolicyNoticeService {
     paymentVo.setBankName(policyNotifyVo.getBankName());
 
     if(ObjectUtil.isNotEmpty(policyNotifyVo.getPayType())){
-      paymentVo.setType(policyNotifyVo.getPayType());
+      paymentVo.setType(policyNotifyVo.getPayType().getCode().toString());
     }
     if(ObjectUtil.isNotEmpty(policyNotifyVo.getPayTime())){
       paymentVo.setPayDate(fmtStrToDate(policyNotifyVo.getPayTime(), DEFAULT_FORMAT));

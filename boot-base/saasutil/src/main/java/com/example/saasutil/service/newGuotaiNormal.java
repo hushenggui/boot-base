@@ -19,13 +19,7 @@ public class newGuotaiNormal extends Object{
 
 
   public static void main(String[] args) throws Exception {
-    String json = "{\n"
-        + "\t\"appkey\": \"finance_gbinsure\",\n"
-        + "\t\"timestamp\": \"2023-02-01 16:39:32\",\n"
-        + "\t\"applyno\": \"TBaoHanGBS2023013012010599003\",\n"
-        + "\t\"baohanno\": \"PBAQ20236501Q000E00288\",\n"
-        + "\t\"sign\": \"4f7efcc87a23d3fbb3e146b9052d18916540473768f411b5df0fb9b27ef78f7c\"\n"
-        + "}";
+    String json = "\t{\"appkey\":\"finance_gbinsure\",\"applyno\":\"TBaoHanGBS2023071012364300895\",\"baohanno\":\"1202322190056020824\",\"iv\":\"\",\"kaibiaotime\":\"2023-07-24 09:00:00\",\"key\":\"XmUaKehfIglaixpCI+jF/g==\",\"sign\":\"6b93efa85aead0211fd407c943eb1aad4ae4661e37551b0accf009ecbf2c6122\",\"timestamp\":\"2023-07-23 21:58:03\"}";
 
     String appKey = "finance_gbinsure";
     String signKey = "317307f1-781f-40da-9a0f-e5513ca8de64";

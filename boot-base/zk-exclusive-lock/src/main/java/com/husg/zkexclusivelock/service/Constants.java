@@ -8,6 +8,7 @@ package com.husg.zkexclusivelock.service;
  **/
 public class Constants {
 
-  public final static String zkServer = "192.168.1.121:2181,192.168.1.122:2181,192.168.1.123:2181";
+  //public final static String zkServer = "192.168.1.121:2181,192.168.1.122:2181,192.168.1.123:2181";
+  public final static String zkServer = "172.16.20.255:2181";
 
 }

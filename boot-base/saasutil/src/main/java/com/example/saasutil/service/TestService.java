@@ -15,9 +15,14 @@ public class TestService {
 
 
   public static void main(String[] args) {
-    List<String> keys = Arrays.asList("a", "p", "R", "f");
+   /* List<String> keys = Arrays.asList("a", "p", "R", "f");
     Collections.sort(keys, new CaseInsensitiveComparator());
-    System.out.println(keys);
+    System.out.println(keys);*/
+    long a = 43 / 10;
+    if(43 / 10 != 0) {
+      a++;
+    }
+    System.out.println(a);
   }
 
 
